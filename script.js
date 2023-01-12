@@ -14,6 +14,13 @@ fetch('http://api.openweathermap.org/geo/1.0/direct?appid=a613e6367c3477b0de0c2f
     getWeather(data[0].lat,data[0].lon)
   });
 
+  // function infoInput(){
+  //   const newName = document.getElementById("cityinput");
+  //   const cityName = document.getElementById("cityName");
+  //   cityName.innerHTML = "*"+newName.value+"*"
+
+  
+
 function getWeather(lat,lon){
   console.log(lat,lon);
   fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=a613e6367c3477b0de0c2f387081fa25&units=imperial`
@@ -26,6 +33,8 @@ function getWeather(lat,lon){
 
     let btnText = weather.city.name;
     document.querySelector(".city").append(btnText);
+    
+
     //getting the Icon and make an image with it..
     let iconData = weather.list[0].weather[0].icon
     console.log(iconData);

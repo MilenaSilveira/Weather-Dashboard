@@ -1,1 +1,29 @@
+:root {
+    --dark: #024961;
+    --light: #ecf6fa;
+}
+
+header {
+    background-color: var(--dark);
+}
+
+body {
+    background-image: url(/assets/images/clouds.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+
+}
+
+.btn {
+    color: white;
+    background-color: var(--dark);
+}
+
+.cards{
+
+    background-color: var(--light);
+}
 
