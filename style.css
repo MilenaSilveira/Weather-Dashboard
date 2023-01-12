@@ -8,7 +8,7 @@ header {
 }
 
 body {
-    background-image: url(/assets/images/clouds.webp);
+    background-image: url(/assets/images/sky2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -17,9 +17,14 @@ body {
 
 }
 
-.btn {
+h2 {
     color: white;
-    background-color: var(--dark);
+    text-align: center;
+}
+
+.btn {
+    color: black;
+    background-color: var(--light);
 }
 
 .cards{
