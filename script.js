@@ -11,17 +11,10 @@ fetch('http://api.openweathermap.org/geo/1.0/direct?appid=a613e6367c3477b0de0c2f
     return response.json();
   })
   .then(function (data) {
-    getWeather(data[0].lat,data[0].lon)
+    saveWeather(data[0].lat,data[0].lon)
   });
 
-  // function infoInput(){
-  //   const newName = document.getElementById("cityinput");
-  //   const cityName = document.getElementById("cityName");
-  //   cityName.innerHTML = "*"+newName.value+"*"
-
-  
-
-function getWeather(lat,lon){
+function saveWeather(lat,lon){
   console.log(lat,lon);
   fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=a613e6367c3477b0de0c2f387081fa25&units=imperial`
 )
@@ -31,13 +24,15 @@ function getWeather(lat,lon){
   .then(function (weather) {
     console.log(weather)
 
-    let btnText = weather.city.name;
-    document.querySelector(".city").append(btnText);
+    let btnContent = weather.city.name;
+    document.querySelector(".city").append(btnContent);
     
 
-    //getting the Icon and make an image with it..
-    let iconData = weather.list[0].weather[0].icon
-    console.log(iconData);
+    //Turning icon into image.
+    let getIcon = weather.list[0].weather[0].icon
+    console.log(getIcon);
+
+    //Weather details.
     let showTemp = weather.list[0].main.temp
     document.querySelector(".show-temp").append("Temperature: " +showTemp+ " ℉");
     let showWind = weather.list[0].wind.speed
@@ -45,15 +40,27 @@ function getWeather(lat,lon){
     let showHumi = weather.list[0].main.humidity
     document.querySelector(".show-humi").append("Humidity: " +showHumi+ " %" )
 
+    //Current date
     let showDate = weather.list[0].dt_txt
     document.querySelector(".show-date").append(" " +showDate+"")
     
-
     let icon =  document.createElement("img")
 
-    icon.setAttribute("src", `http://openweathermap.org/img/wn/${iconData}@2x.png`)
+    icon.setAttribute("src", `http://openweathermap.org/img/wn/${getIcon}@2x.png`)
 
     document.querySelector(".icon").append(icon);
+
+    //Five day weather
+
+      // let fiveDays = weather.list[0].main.temp_min
+      // document.querySelector
+    function fiveDays(){ 
+      for(i=0;i<5;i++){
+        document.getElement("day" +(i+1)+ "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min -288.53).toFixed(1)+"°";
+      }
+    }
+      
+
 
     
   });
