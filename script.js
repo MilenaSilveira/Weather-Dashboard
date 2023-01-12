@@ -4,15 +4,16 @@
 // 4. Build HTML with the Data we get from the weather
 
 
-
-fetch('http://api.openweathermap.org/geo/1.0/direct?appid=a613e6367c3477b0de0c2f387081fa25&q=Orlando'
-)
+function addCity(cityName){
+fetch(`http://api.openweathermap.org/geo/1.0/direct?appid=a613e6367c3477b0de0c2f387081fa25&q=${cityName}`)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     saveWeather(data[0].lat,data[0].lon)
-  });
+
+  })};
+
 
 function saveWeather(lat,lon){
   console.log(lat,lon);
@@ -51,17 +52,20 @@ function saveWeather(lat,lon){
     document.querySelector(".icon").append(icon);
 
     //Five day weather
-
-      // let fiveDays = weather.list[0].main.temp_min
-      // document.querySelector
-    function fiveDays(){ 
-      for(i=0;i<5;i++){
-        document.getElement("day" +(i+1)+ "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min -288.53).toFixed(1)+"°";
-      }
-    }
-      
-
-
+  
+   
+  
+  
+   
     
   });
+
+
+
 }
+
+let searchBtn = document.getElementById("enter");
+searchBtn.addEventListener('click', () => {
+  var cityName = document.getElementById('city-name').value
+  addCity(cityName)
+});

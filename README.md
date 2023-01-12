@@ -1,7 +1,7 @@
 # Weather-Dashboard
 
 The Weather Dashboard was created so when the user searches a city name, the current day weather report is displayed on the screen.
-The dashbord will show weather details like, temperature, wind speed, humidity, and an icon of the current conditions. 
+The dashboard will show weather details like, temperature, wind speed, humidity, and an icon of the current conditions. 
 On the center of the page user will also see a future five day weather report that with display some extra weather conditions.
 
 ## Tools
@@ -11,11 +11,11 @@ HTML, Javascript, CSS, Bootstrap and Api's.
 
 ## Live Link
 
- https://milenasilveira.github.io/My-Day-Scheduler/
+https://milenasilveira.github.io/Weather-Dashboard/
 
 ## Screenshots
 
-
+![Weather Dashbord](/assets/images/Screenshot1.png)
 
 ## Versioning
 
