@@ -1,30 +1,33 @@
 :root {
-    --dark: #024961;
-    --light: #ecf6fa;
+    --dark: #1c2763;
+    --light: #c3e4fa;
 }
 
 header {
+    
     background-color: var(--dark);
 }
 
 body {
-    background-image: url(/assets/images/sky2.jpg);
+
+    background-color: rgb(235, 241, 250);
+    /* background-image: url(/assets/images/sky2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center; */
     
 
 }
 
 h2 {
-    color: white;
+    color: black;
     text-align: center;
 }
 
 .btn {
-    color: black;
-    background-color: var(--light);
+    color: white;
+    background-color: var(--dark);
 }
 
 .cards{
